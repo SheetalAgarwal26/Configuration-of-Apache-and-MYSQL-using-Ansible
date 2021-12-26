@@ -1,4 +1,4 @@
-# Configuration of Apache WebServer and MYSQL on Rhel8 Operating System.
+# Configuration of Apache WebServer and MYSQL
 
 Build a Ansible Script with following items :-
 - Ansible script should install and setup Apache.
