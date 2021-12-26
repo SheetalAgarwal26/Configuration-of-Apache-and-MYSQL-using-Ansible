@@ -1,0 +1,37 @@
+- name: Configuration of Apache WebServer and MYSQL 
+  hosts: web
+  vars_files:
+          - conf_var.yml
+
+  tasks:
+          - name: "Configure Apache WebServer"
+            package:
+                    name: "{{ package_name }}"
+                    state: present
+
+          - name: "Start Apache WebServer"
+            service:
+                    name: "{{ Service_name }}"
+                    state: started
+
+          - name: "Create Directory"
+            file:
+                 state: directory
+                 path: "{{ path }}"          
+
+          - name: Copy Website
+            become: yes
+            git:
+                    repo: 'https://github.com/django/django'
+                    dest: "{{ path }}"
+
+          - name: Install MYSQL
+            package:
+                    name: "{{ mysql_server }}"
+                    state: present
+
+          - name: "Start MYSQL service"
+            service:
+                    name: "{{ MYSQL_Service }}"
+                    state: started
+                    

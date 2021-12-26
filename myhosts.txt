@@ -1,0 +1,8 @@
+[web]
+IP_of_Target_Node  ansible_user=user_name ansible_ssh_pass=Password_Target_Node ansible_connection=ssh
+
+
+
+
+
+

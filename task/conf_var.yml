@@ -1,0 +1,7 @@
+# vars file 
+
+package_name: "httpd"
+Service_name: "httpd"
+path: "/var/www/dmlabs/django"
+mysql_server: "mysql-server"
+MYSQL_Service: "mysqld"
